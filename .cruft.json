@@ -1,0 +1,21 @@
+{
+  "template": "https://github.com/tlambert03/pyrepo-cookiecutter",
+  "commit": "700a4fd096dd3dfb2e6c3a4d767b85a1f453a076",
+  "checkout": null,
+  "context": {
+    "cookiecutter": {
+      "full_name": "Benjamin Barad",
+      "email": "benjamin.barad@gmail.com",
+      "github_username": "teamtomo",
+      "project_name": "qvox",
+      "project_slug": "qvox",
+      "project_short_description": "Operations on Quantized (Integer) Voxel Arrays",
+      "pypi_username": "teamtomo",
+      "_copy_without_render": [
+        ".github/workflows/*"
+      ],
+      "_template": "https://github.com/tlambert03/pyrepo-cookiecutter"
+    }
+  },
+  "directory": null
+}
