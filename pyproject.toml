@@ -25,7 +25,10 @@ classifiers = [
     "Typing :: Typed",
 ]
 dynamic = ["version"]
-dependencies = []
+dependencies = [
+    "numpy",
+    "scipy"
+]
 
 # extras
 # https://peps.python.org/pep-0621/#dependencies-optional-dependencies
