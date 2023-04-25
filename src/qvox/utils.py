@@ -18,7 +18,7 @@ def split_quantized_array(seg: np.ndarray) -> List[np.ndarray]:
     - binary_matrices: list of binary numpy arrays of shape (X, Y, Z) representing the binary masks of each class
     """
     binary_matrices = []
-    for i in range(seg.max()):
+    for i in range(int(seg.max())):
         binary_matrices.append((seg == i).astype(np.uint8))
     return binary_matrices
 
