@@ -6,7 +6,7 @@ Functions:
 """
 
 import numpy as np
-from utils import split_quantized_array, combine_binary_arrays
+from .utils import split_quantized_array, combine_binary_arrays
 from scipy.ndimage import zoom
 
 
