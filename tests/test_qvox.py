@@ -11,7 +11,7 @@ def test_resample():
     Tests the resample function from the qvox.sampling module.
     """
     from qvox.sampling import resample
-    expected_output = np.zeroes((4,6,8))
+    expected_output = np.zeros((4,6,8))
     expected_output[0:2,0:2,:] = 1
     expected_output[2:4,:,6:8] = 2
     output = resample(test_array, 2, 1)
