@@ -41,7 +41,7 @@ def test_reassign():
     expected_output = np.zeros((2,3,4))
     expected_output[0,0,:] = 2
     expected_output[1,:,3] = 3
-    output = reorder_values(test_array,{1:2,2:3})
+    output = reassign_values(test_array,{1:2,2:3})
     assert(output.shape == expected_output.shape)
     assert(np.allclose(output, expected_output))
 
