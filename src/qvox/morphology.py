@@ -1,11 +1,11 @@
 """
 This module contains functions for performing morphological operations on numpy arrays of integer labels.
 
-morphological_grow: Splits a numpy array of integer labels into constituent binary arrays, performs a morphological grow operation
+grow: Splits a numpy array of integer labels into constituent binary arrays, performs a morphological grow operation
 using an optional user-designated binary structure, then recombines the arrays into the original quantized integer format
 with the original ordering.
 
-morphological_shrink: Splits a numpy array of integer labels into constituent binary arrays, performs a morphological shrink operation
+shrink: Splits a numpy array of integer labels into constituent binary arrays, performs a morphological shrink operation
 using an optional user-designated binary structure, then recombines the arrays into the original quantized integer format
 with the original ordering.
 """
@@ -18,7 +18,7 @@ from typing import Optional
 
 
 
-def morphological_grow(quantized_array: np.ndarray, binary_structure: Optional[np.ndarray] = None, num_iterations: int = 1) -> np.ndarray:
+def grow(quantized_array: np.ndarray, binary_structure: Optional[np.ndarray] = None, num_iterations: int = 1) -> np.ndarray:
     """
     Splits a numpy array of integer labels into constituent binary arrays, performs a morphological grow operation
     using an optional user-designated binary structure, then recombines the arrays into the original quantized integer format
@@ -52,7 +52,7 @@ def morphological_grow(quantized_array: np.ndarray, binary_structure: Optional[n
     recombined_array = combine_binary_arrays(grown_arrays)
     return recombined_array
 
-def morphological_shrink(quantized_array: np.ndarray, binary_structure: Optional[np.ndarray] = None, num_iterations: int = 1) -> np.ndarray:
+def shrink(quantized_array: np.ndarray, binary_structure: Optional[np.ndarray] = None, num_iterations: int = 1) -> np.ndarray:
     """
     Splits a numpy array of integer labels into constituent binary arrays, performs a morphological shrink operation
     using an optional user-designated binary structure, then recombines the arrays into the original quantized integer format
