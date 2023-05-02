@@ -3,7 +3,7 @@ This module contains utility functions for working with quantized arrays.
 """
 
 import numpy as np
-from typing import List, Tuple
+from typing import List, Tuple, Dict
 
 def split_quantized_array(seg: np.ndarray) -> List[np.ndarray]:
     """
@@ -46,7 +46,7 @@ def combine_binary_arrays(binary_matrices: List[np.ndarray]) -> np.ndarray:
     return combined_matrix
 
 
-def reassign_values(arr: np.ndarray, value_pairs: dict[int, int]) -> np.ndarray:
+def reassign_values(arr: np.ndarray, value_pairs: Dict[int, int]) -> np.ndarray:
     """
     Swaps the values in an n-d array according to a set of value pairs.
     
