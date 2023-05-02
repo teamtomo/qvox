@@ -31,7 +31,6 @@ def test_split_recombine():
     assert(np.allclose(binary_arrays[1], expected_output_2))
     binary_arrays_combined = combine_binary_arrays(binary_arrays)
     assert(np.allclose(binary_arrays_combined, test_array))
-    return True
 
 def test_reassign():
     """
