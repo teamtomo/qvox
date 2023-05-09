@@ -12,7 +12,7 @@ from scipy import ndimage
 
 
 def rescale(quantized_array: np.ndarray, input_spacing: float, 
-                                   output_spacing: float) -> np.ndarray:
+                                   output_spacing: float, threshold: float = 0.2) -> np.ndarray:
     """
     Rescales a numpy array of integer labels to a specified voxel spacing, splits it into constituent binary arrays,
     resamples each array from input spacing to new output spacing, rebinarizes, then recombines the arrays into the
@@ -36,8 +36,9 @@ def rescale(quantized_array: np.ndarray, input_spacing: float,
     binary_arrays = split_quantized_array(quantized_array)
     resampled_arrays = []
     for binary_array in binary_arrays:
-        resampled_array = ndimage.zoom(binary_array, np.divide(input_spacing, output_spacing), order=1)
-        resampled_array = np.round(resampled_array).astype(int) # simple rounding - may replace eventually
+        space_factor = np.divide(input_spacing, output_spacing)
+        resampled_array = ndimage.zoom(binary_array, space_factor, order=2)
+        resampled_array = np.where(resampled_array > threshold, 1, 0).astype(int) # simple rounding - may replace eventually
         resampled_arrays.append(resampled_array)
     recombined_array = combine_binary_arrays(resampled_arrays)
     return recombined_array
