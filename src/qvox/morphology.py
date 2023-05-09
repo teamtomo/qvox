@@ -87,7 +87,7 @@ def shrink(quantized_array: np.ndarray, binary_structure: Optional[np.ndarray] =
     return recombined_array
 
 
-def gaussian_smooth(quantized_array: np.ndarray, sigma: float = 1.0, threshold: float = 0.001) -> np.ndarray:
+def gaussian_smooth(quantized_array: np.ndarray, sigma: float = 1.0, threshold: float = 0.5) -> np.ndarray:
     """
     Smooths the individual components of a numpy array of integer labels while maintaining integer-ness.
 
